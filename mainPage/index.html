@@ -4,11 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal Externa</title>
+    <link rel="stylesheet" href="../styles/generalCSS.css">
+    <link rel="stylesheet" href="../styles/mainPageCSS.css">
 </head>
 
 <!-- TÓPICO 2.1 -> PÁGINA PRINCIPAL EXTERNA -->
 
 <body>
     <header>WebCar</header>
+
+    <nav>
+        <p>
+            <label for="marcaVeiculo">Marca:
+                <select name="marca" id="marcaVeiculo">
+                    <option value="">Selecione</option>
+                    <option value="chevrolet">Chevrolet</option>
+                    <option value="volks">Volkswagen</option>
+                    <option value="ford">Ford</option>
+                    <option value="honda">Honda</option>
+                    <option value="toyota">Toyota</option>
+                </select>
+            </label>
+        </p>
+
+        <p>
+            <label for="modeloVeiculo">Modelo:
+                <select name="modelo" id="modeloVeiculo">
+                    <option value="">Selecione</option>
+                    <option value="s10">S10</option>
+                    <option value="gol">Gol</option>
+                    <option value="mustang">Mustang</option>
+                    <option value="civic">Civic</option>
+                    <option value="corolla">Corolla</option>
+                </select>
+            </label>
+        </p>
+
+        <p>
+            <label for="cidade">Localização:
+                <select name="cidade" id="cidade">
+                    <option value="">Selecione</option>
+                    <option value="uberlandia">Uberlândia</option>
+                    <option value="uberaba">Uberaba</option>
+                    <option value="araguari">Araguari</option>
+                    <option value="igarapava">Igarapava</option>
+                </select>
+            </label>
+        </p>
+    </nav>
 </body>
 </html>

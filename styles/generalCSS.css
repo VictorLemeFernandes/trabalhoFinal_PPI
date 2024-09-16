@@ -5,3 +5,7 @@
     --corTerciaria: #FA7F08;
     --corHover: #9EF8EE;
 }
+
+body {
+    margin: 0;
+}
