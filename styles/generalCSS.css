@@ -1,7 +1,7 @@
 /* Variaveis globais */
 :root {
-    --corPrimaria: #22BABB;
-    --corSecundaria: #348888;
-    --corTerciaria: #FA7F08;
+    --corPrimaria: #cf3636;
+    --corSecundaria: #007beb;
+    --corTerciaria: hsl(0, 0%, 100%);
     --corHover: #9EF8EE;
 }

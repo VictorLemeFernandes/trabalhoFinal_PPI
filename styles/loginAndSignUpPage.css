@@ -41,7 +41,7 @@ body {
 }
 
 h1 {
-  color: var(--corTerciaria);
+  color: var(--corSecundaria);
   margin-bottom: 20px;
   font-size: 36px;
   text-align: left;
@@ -75,8 +75,23 @@ button {
   font-size: 16px;
   margin-top: 24px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button:hover {
   background-color: var(--corHover);
 }
+
+button .material-symbols-outlined {
+  margin-left: 8px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  margin: 20px 0;
+  display: inline-block;
+}
+
