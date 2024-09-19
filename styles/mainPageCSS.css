@@ -1,0 +1,21 @@
+@import url(generalCSS.css);
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--corPrimaria);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: var(--corSecundaria);
+}
+
+.opcoesBusca {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

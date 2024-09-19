@@ -5,3 +5,7 @@
     --corTerciaria: hsl(0, 0%, 100%);
     --corHover: #9EF8EE;
 }
+
+body {
+    margin: 0;
+}
