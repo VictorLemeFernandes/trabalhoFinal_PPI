@@ -1,4 +1,15 @@
-@import url(generalCSS.css);
+@import url(../imports.css);
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--corFundao);
+}
 
 header {
     display: flex;
@@ -7,15 +18,39 @@ header {
     background-color: var(--corPrimaria);
 }
 
+header img {
+    margin: 1rem;
+}
+
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     background-color: var(--corSecundaria);
+    font-family: var(--fontePadrao);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .opcoesBusca {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--corPrimaria);
+    font-family: var(--fontePadrao);
+    padding: 5px;
+    position: sticky;
+    width: 100%;
+    box-sizing: border-box;
 }

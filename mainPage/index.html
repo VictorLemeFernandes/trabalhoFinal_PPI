@@ -4,53 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal Externa</title>
-    <link rel="stylesheet" href="../styles/generalCSS.css">
-    <link rel="stylesheet" href="../styles/mainPageCSS.css">
+    <link rel="stylesheet" href="../imports.css">
 </head>
 
 <!-- TÓPICO 2.1 -> PÁGINA PRINCIPAL EXTERNA -->
 
 <body>
-    <header>WebCar</header>
+    <!-- Fiz essa gambiarra com a div, nao sei se o Prof. irá aceitar, confirmar com ele... -->
+    <div>
+        <header>
+            <img src="../assets/logo/webcar_branco.png" alt="Logo colorida" width="60" height="60">
+        </header>
+        <nav>
+            <p>
+                <label for="marcaVeiculo">Marca:
+                    <select name="marca" id="marcaVeiculo">
+                        <option value="">Selecione</option>
+                        <option value="chevrolet">Chevrolet</option>
+                        <option value="volks">Volkswagen</option>
+                        <option value="ford">Ford</option>
+                        <option value="honda">Honda</option>
+                        <option value="toyota">Toyota</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label for="modeloVeiculo">Modelo:
+                    <select name="modelo" id="modeloVeiculo">
+                        <option value="">Selecione</option>
+                        <option value="s10">S10</option>
+                        <option value="gol">Gol</option>
+                        <option value="mustang">Mustang</option>
+                        <option value="civic">Civic</option>
+                        <option value="corolla">Corolla</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label for="cidade">Localização:
+                    <select name="cidade" id="cidade">
+                        <option value="">Selecione</option>
+                        <option value="uberlandia">Uberlândia</option>
+                        <option value="uberaba">Uberaba</option>
+                        <option value="araguari">Araguari</option>
+                        <option value="igarapava">Igarapava</option>
+                    </select>
+                </label>
+            </p>
+        </nav>
+    </div>
 
-    <nav>
-        <p>
-            <label for="marcaVeiculo">Marca:
-                <select name="marca" id="marcaVeiculo">
-                    <option value="">Selecione</option>
-                    <option value="chevrolet">Chevrolet</option>
-                    <option value="volks">Volkswagen</option>
-                    <option value="ford">Ford</option>
-                    <option value="honda">Honda</option>
-                    <option value="toyota">Toyota</option>
-                </select>
-            </label>
-        </p>
+    <main>
+        <section class="cards">
+            <div class="card">
+                <img src="../assets/cards/corolla.jpeg" alt="">
+                <h3>Marca: Toyota</h3>
+                <p>Modelo: Corolla</p>
+                <p>Ano: 2019</p>
+                <p>Cidade: Uberlândia</p>
+                <p class="card_price">Preço: R$80.000,00</p>
+            </div>
+            <div class="card">
+                <img src="../assets/cards/corolla.jpeg" alt="">
+                <h3>Marca: Toyota</h3>
+                <p>Modelo: Corolla</p>
+                <p>Ano: 2019</p>
+                <p>Cidade: Uberlândia</p>
+                <p class="card_price">Preço: R$80.000,00</p>
+            </div>
+            <div class="card">
+                <img src="../assets/cards/corolla.jpeg" alt="">
+                <h3>Marca: Toyota</h3>
+                <p>Modelo: Corolla</p>
+                <p>Ano: 2019</p>
+                <p>Cidade: Uberlândia</p>
+                <p class="card_price">Preço: R$80.000,00</p>
+            </div>
+            <div class="card">
+                <img src="../assets/cards/corolla.jpeg" alt="">
+                <h3>Marca: Toyota</h3>
+                <p>Modelo: Corolla</p>
+                <p>Ano: 2019</p>
+                <p>Cidade: Uberlândia</p>
+                <p class="card_price">Preço: R$80.000,00</p>
+            </div>
+            <div class="card">
+                <img src="../assets/cards/corolla.jpeg" alt="">
+                <h3>Marca: Toyota</h3>
+                <p>Modelo: Corolla</p>
+                <p>Ano: 2019</p>
+                <p>Cidade: Uberlândia</p>
+                <p class="card_price">Preço: R$80.000,00</p>
+            </div>
+            <div class="card">
+                <img src="../assets/cards/corolla.jpeg" alt="">
+                <h3>Marca: Toyota</h3>
+                <p>Modelo: Corolla</p>
+                <p>Ano: 2019</p>
+                <p>Cidade: Uberlândia</p>
+                <p class="card_price">Preço: R$80.000,00</p>
+            </div>
+        </section>
+    </main>
 
-        <p>
-            <label for="modeloVeiculo">Modelo:
-                <select name="modelo" id="modeloVeiculo">
-                    <option value="">Selecione</option>
-                    <option value="s10">S10</option>
-                    <option value="gol">Gol</option>
-                    <option value="mustang">Mustang</option>
-                    <option value="civic">Civic</option>
-                    <option value="corolla">Corolla</option>
-                </select>
-            </label>
-        </p>
-
-        <p>
-            <label for="cidade">Localização:
-                <select name="cidade" id="cidade">
-                    <option value="">Selecione</option>
-                    <option value="uberlandia">Uberlândia</option>
-                    <option value="uberaba">Uberaba</option>
-                    <option value="araguari">Araguari</option>
-                    <option value="igarapava">Igarapava</option>
-                </select>
-            </label>
-        </p>
-    </nav>
+    <footer>
+        <h3>Desenvolvido por Pâmela, Pedro e Victor</h3>
+    </footer>
 </body>
 </html>
