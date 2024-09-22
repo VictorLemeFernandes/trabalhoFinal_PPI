@@ -1,0 +1,10 @@
+/* Variaveis globais */
+:root {
+    --corPrimaria: #CF3636;
+    --corSecundaria: #0079ebb6;
+    --corTerciaria: #84aed4;
+    --corCard: #a4a4a426;
+    --corFundao: #a4a4a410;
+
+    --fontePadrao: Arial, sans-serif;
+}
