@@ -1,0 +1,63 @@
+@import url('variables.css');
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #cfcfcf;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  width: 100%;
+  background-color: var(--corPrimaria);
+  padding: 10px 0;
+  text-align: center;
+}
+
+.header img {
+  max-width: 64px;
+}
+
+.container {
+  background-color: white;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  margin: 20px;
+}
+
+.imagens {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 20px;
+}
+
+.anuncio {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+ul li strong {
+  color: #333;
+}
