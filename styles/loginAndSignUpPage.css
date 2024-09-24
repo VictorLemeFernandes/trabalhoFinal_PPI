@@ -1,4 +1,4 @@
-@import url(variables.css);
+@import url(/styles/variables.css);
 
 * {
   margin: 0;
@@ -65,7 +65,7 @@ label {
   margin-bottom: 8px; 
 }
 
-button {
+.btn-entrar {
   width: 100%;
   padding: 10px;
   background-color: var(--corSecundaria);
@@ -80,11 +80,11 @@ button {
   justify-content: center;
 }
 
-button:hover {
+.btn-entrar:hover {
   background-color: var(--corHover);
 }
 
-button .material-symbols-outlined {
+.btn-entrar .material-symbols-outlined {
   margin-left: 8px;
   text-align: center;
 }
@@ -101,3 +101,4 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+
