@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/registrodeinteresse.css">
+    <title>Registro de Interesse no Veículo</title>
+</head>
+<header>
+    <img src="/assets/logo/webcar_branco.png" alt="webcar_branco">
+    <a href="/pages/mainPage/mainPage_2_1.html" id="voltar"><img src="/assets/icons/voltar.png" alt="Voltar"></a>
+</header>
+
+<body>
+
+
+    <div class="container">
+        <h1>Registrar Interesse no Veículo</h1>
+        <form id="form-interesse">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+            <span class="erro" id="erro-nome"></span>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone">
+            <span class="erro" id="erro-telefone"></span>
+
+            <label for="mensagem">Mensagem de Interesse:</label>
+            <textarea id="mensagem" name="mensagem" rows="4"
+                placeholder="Escreva sua mensagem de interesse no veículo"></textarea>
+            <span class="erro" id="erro-mensagem"></span>
+
+            <button type="submit">Enviar Interesse</button>
+        </form>
+    </div>
+
+</body>
+
+<footer>
+    <h3>Desenvolvido por Pâmela, Pedro e Victor</h3>
+</footer>
+
+<script src="/js/javascript.js"></script>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/listagemdeanuncios.css">
+    <title>Listagem de Anúncios</title>
+</head>
+<header>
+    <img src="/assets/logo/webcar_branco.png" alt="webcar_branco">
+    <a href="/pages/mainPage/mainPage_2_5.html" id="voltar"><img src="/assets/icons/voltar.png" alt="Voltar"></a>
+</header>
+<body>
+
+    <div class="container">
+        <h1>Meus Anúncios</h1>
+
+                <!-- Exemplos de anuncio -->
+        <div class="anuncio">
+            <img src="/assets/cards/corolla.jpg" alt="Foto do Veículo">
+            <div class="anuncio-info">
+                <h2>Marca: Toyota</h2>
+                <p>Modelo: Corolla</p>
+                <p>Ano de Fabricação: 2020</p>
+            </div>
+            <div class="anuncio-acoes">
+                <a href="detalhes.html">Ver Detalhes</a>
+                <a href="/pages/listofinterests/listofinterests.html">Ver Interesses</a>
+                <button onclick="excluirAnuncio(this)">Excluir</button>
+            </div>
+        </div>
+
+        <div class="anuncio">
+            <img src="/assets/cards/civic.jpg" alt="Foto do Veículo">
+            <div class="anuncio-info">
+                <h2>Marca: Honda</h2>
+                <p>Modelo: Civic</p>
+                <p>Ano de Fabricação: 2019</p>
+            </div>
+            <div class="anuncio-acoes">
+                <a href="/pages/">Ver Detalhes</a>
+                <a href="/pages/listofinterests/listofinterests.html">Ver Interesses</a>
+                <button onclick="excluirAnuncio(this)">Excluir</button>
+            </div>
+        </div>
+
+        <!-- Outros anúncios seriam listados da mesma forma -->
+    </div>
+</body>
+
+<footer>
+    <h3>Desenvolvido por Pâmela, Pedro e Victor</h3>
+</footer>
+
+<script src="/js/javascript.js"></script>
+
+</html>
