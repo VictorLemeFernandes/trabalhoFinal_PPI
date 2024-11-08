@@ -3,16 +3,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const telefoneInput = document.getElementById('telefone');
   const emailInput = document.getElementById('email');
   const cadastrar = document.getElementById('cadastrar');
-  const form = document.getElementById('signupForm');
+  const form = document.querySelector('form');
 
+  // Precisamos corrigir a forma como tratar os dados... Ele tá alterando o CPF p/ ficar igual a máscara, mas acho que o certo seria só verificar mesmo, não alterar.. Ex.: eu digito o CPF 123.456.789-10 no banco eu acho que seria melhor armazenar 12345678910, mas sei lá... Vamos observar
   cpfInput.addEventListener('input', function () {
-    let value = cpfInput.value;
-    value = value.replace(/\D/g, ''); 
-    if (value.length > 11) value = value.slice(0, 11);
-    value = value.replace(/(\d{3})(\d)/, '$1.$2'); 
-    value = value.replace(/(\d{3})(\d)/, '$1.$2'); 
-    value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); 
-    cpfInput.value = value; 
+      let value = cpfInput.value;
+      value = value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+      value = value.replace(/(\d{3})(\d)/, '$1.$2');
+      value = value.replace(/(\d{3})(\d)/, '$1.$2');
+      value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+      cpfInput.value = value;
   });
 
   telefoneInput.addEventListener('input', function () {
