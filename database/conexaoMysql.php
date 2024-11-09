@@ -13,7 +13,7 @@ function mysqlConnect()
 
   try {
     $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8mb4", $db_username, $db_password, $options);
-    echo "Conexão bem-sucedida!";
+    // echo "Conexão bem-sucedida!";
     return $pdo;
   } catch (Exception $e) {
     echo 'Ocorreu uma falha na conexão com o MySQL: ' . $e->getMessage();

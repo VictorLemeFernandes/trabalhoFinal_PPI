@@ -21,7 +21,7 @@
     <div class="container">
 
         <h1>Login</h1>
-        <form action="/service/login.php" method="POST">
+        <form name="formLogin" class="row g-3">
             <div>
                 <input type="email" id="email" name="email" required placeholder="E-mail">
             </div>
@@ -29,13 +29,55 @@
                 <input type="password" id="senha" name="senha" required placeholder="Senha">
             </div>
             <div>
-                <button type="submit" class="btn-entrar">
+                <button class="btn-entrar">
                     Entrar
                     <span class="material-symbols-outlined">login</span>
                 </button>
             </div>
+            <div>
+                <a href="/pages/signUpPage/index.html">Não tem uma conta? Cadastre-se</a>
+            </div>
+            <div class="col-sm-12 d-grid">
+                <p id="loginFailMsg" class="hide"></p>
+            </div>
         </form>
     </div>
+
+    <script>
+
+        async function sendForm(form) {
+
+            try {
+                const response = await fetch("../../service/login.php", { method: 'post', body: new FormData(form) });
+                if (!response.ok) throw new Error(response.statusText);
+                const loginResult = await response.json();
+
+                if (loginResult.success)
+                    window.location = loginResult.newLocation;
+                else {
+                    const parLoginFailMsg = document.querySelector("#loginFailMsg");
+                    parLoginFailMsg.textContent = 'Dados incorretos. Por favor, tente novamente.';
+                    parLoginFailMsg.classList.remove('hide');
+                    form.senha.value = "";
+                    form.senha.focus();
+                }
+            }
+            catch (e) {
+                const parLoginFailMsg = document.querySelector("#loginFailMsg");
+                parLoginFailMsg.textContent = 'Falha inesperada. Entre em contato o administrador do sistema.';
+                parLoginFailMsg.classList.remove('hide');
+            }
+        }
+
+        const meuForm = document.forms.formLogin;
+        meuForm.onsubmit = function (e) {
+            e.preventDefault();
+            sendForm(meuForm);
+        }
+
+    </script>
+
+
 </body>
 
 </html>

@@ -1,4 +1,11 @@
+<?php
 
+session_start();
+    if(!isset($_SESSION['loggedIn'])){
+    header('Location: ../pages/loginPage/index.html');
+    exit();
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">

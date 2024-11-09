@@ -1,48 +1,62 @@
 <?php
 require_once "../database/conexaoMysql.php";
 
-function checkLogin($pdo, $email, $senha)
+class LoginResult
 {
+  public $success;
+  public $newLocation;
+
+  function __construct($success, $newLocation)
+  {
+    $this->success = $success;
+    $this->newLocation = $newLocation;
+  }
+}
+function checkUserCredentials($pdo, $email, $senha)
+{
+  $sql = <<<SQL
+  SELECT SenhaHash
+  FROM Anunciante
+  WHERE Email = ?
+  SQL;
+
   try {
-    $stmt = $pdo->prepare(<<<SQL
-            SELECT Id, Nome, SenhaHash 
-            FROM Anunciante
-            WHERE Email = ?
-            SQL
-    );
-
+    $stmt = $pdo->prepare($sql);
     $stmt->execute([$email]);
-    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    $senhaHash = $stmt->fetchColumn();
 
-    if (!$usuario) {
-      return false;
-    }
+    if (!$senhaHash)
+      return false; // a consulta não retornou nenhum resultado (email não encontrado)
 
-    if (password_verify($senha, $usuario['SenhaHash'])) {
-      session_start();
-      $_SESSION['userId'] = $usuario['Id'];
-      $_SESSION['userName'] = $usuario['Nome'];
-      $_SESSION['loggedIn'] = true;
-      return true;
-    }
+    if (!password_verify($senha, $senhaHash))
+      return false; // email e/ou senha incorreta
 
-    return false;
+    // email e senha corretos
+    return true;
   } catch (Exception $e) {
-    error_log('Erro no login: ' . $e->getMessage());
-    return false;
+    exit('Falha inesperada: ' . $e->getMessage());
   }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $pdo = mysqlConnect();
-  $email = $_POST['email'] ?? '';
-  $senha = $_POST['senha'] ?? '';
+$email = $_POST['email'] ?? '';
+$senha = $_POST['senha'] ?? '';
 
-  if (checkLogin($pdo, $email, $senha)) {
-    header('Location: ../pages/mainPage/mainPage_2_5.html');
-    exit();
-  } else {
-    header('Location: ../pages/loginPage/index.html?error=1');
-    exit();
-  }
-}
+$pdo = mysqlConnect();
+if (checkUserCredentials($pdo, $email, $senha)) {
+  // Define o parâmetro 'httponly' para o cookie de sessão, para que o cookie
+  // possa ser acessado apenas pelo navegador nas requisições http (e não por código JavaScript).
+  // Aumenta a segurança evitando que o cookie de sessão seja roubado por eventual
+  // código JavaScript proveniente de ataq. X S S.
+  $cookieParams = session_get_cookie_params();
+  $cookieParams['httponly'] = true;
+  session_set_cookie_params($cookieParams);
+
+  session_start();
+  $_SESSION['loggedIn'] = true;
+  $_SESSION['user'] = $email;
+  $response = new LoginResult(true, '/../pages/mainPage/mainPage_2_5.html');
+} else
+  $response = new LoginResult(false, '');
+
+header('Content-Type: application/json; charset=utf-8');
+echo json_encode($response);
