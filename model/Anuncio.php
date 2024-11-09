@@ -90,7 +90,7 @@ class Anuncio
     {
         return $this->idAnunciante;
     }
-    static function Create($pdo, $marca, $modelo, $ano, $cor, $quilometragem, $descricao, $valor, $estado, $cidade, $idanunciante)
+    static function Create($pdo, $marca, $modelo, $ano, $cor, $quilometragem, $descricao, $valor, $estado, $cidade)
     {
         $stmt = $pdo->prepare(<<<SQL
         INSERT INTO Anuncio (Marca, Modelo, Ano, Cor, Quilometragem, Descricao, Valor, DataHora, Estado, Cidade, IdAnunciante)

@@ -1,12 +1,3 @@
-<?php
-
-session_start();
-    if(!isset($_SESSION['loggedIn'])){
-    header('Location: /pages/loginPage/login.php');
-    exit();
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +74,7 @@ session_start();
         <h3>Desenvolvido por Pâmela, Pedro e Victor</h3>
     </footer>
 
-    <script src="/pages/signUpPage/formValidator.js"></script>
+    <script src="/pages/adDetailPage/adValidator.js"></script>
 </body>
 
 </html>

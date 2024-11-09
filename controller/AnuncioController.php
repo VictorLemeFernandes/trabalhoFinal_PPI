@@ -1,6 +1,6 @@
 <?php
-require "Anuncio.php";
-require "conexaoMysql.php";
+require_once "../model/Anuncio.php";
+require_once "../database/conexaoMysql.php";
 
 $acao = $_GET['acao'];
 
@@ -18,11 +18,11 @@ switch ($acao) {
         $valor = $_POST["valor"] ?? "";
         $estado = $_POST["estado"] ?? "";
         $cidade = $_POST["cidade"] ?? "";
-        $idanunciante = $_POST["idanunciante"] ?? "";
+        // $idanunciante = $_POST["idanunciante"] ?? "";
 
 
         try {
-            Anuncio::Create($pdo, $marca, $modelo, $ano, $cor, $quilometragem, $descricao, $valor, $estado, $cidade, $idanunciante);
+            Anuncio::Create($pdo, $marca, $modelo, $ano, $cor, $quilometragem, $descricao, $valor, $estado, $cidade);
             header("Location: ../pages/adlisting/adlisting.html");
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
