@@ -17,7 +17,7 @@
   <div class="container">
     <h1>Cadastro</h1>
     <!--Prestar atencao nessas action-->
-    <form action="../../arquivosPHP/controller.php?acao=cadastrarAnunciante" method="POST">
+    <form action="../../controller/controller.php?acao=cadastrarAnunciante" method="POST">
       <div>
         <input type="text" id="nome" name="nome" required placeholder="Nome">
       </div>
@@ -39,12 +39,11 @@
       </div>
 
       <div>
-        <a href="/pages/loginPage/index.html" class="btn-entrar">
+        <button type="submit" class="btn-entrar">
           Cadastrar
           <span class="material-symbols-outlined"></span>
-        </a>
+        </button>
       </div>
-
 
       <div> <a href="/pages/loginPage/index.html">Já tenho uma conta</a></div>
     </form>

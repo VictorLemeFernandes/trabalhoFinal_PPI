@@ -21,23 +21,18 @@
     <div class="container">
 
         <h1>Login</h1>
-        <form action="/pages/mainPage/mainPage_2_5.html">
+        <form action="/service/login.php" method="POST">
             <div>
-                <input type="email" id="email" name="email" placeholder="E-mail">
+                <input type="email" id="email" name="email" required placeholder="E-mail">
             </div>
             <div>
-                <input type="password" id="senha" name="senha" placeholder="Senha">
+                <input type="password" id="senha" name="senha" required placeholder="Senha">
             </div>
-
             <div>
-                <a href="/pages/mainPage/mainPage_2_5.html" class="btn-entrar">
+                <button type="submit" class="btn-entrar">
                     Entrar
                     <span class="material-symbols-outlined">login</span>
-                </a>
-            </div>
-
-            <div>
-                <a href="/pages/signUpPage/index.html">Não tem uma conta? Cadastre-se</a>
+                </button>
             </div>
         </form>
     </div>
