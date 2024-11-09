@@ -54,4 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
       form.submit(); // formulário enviado com sucesso
     }
   });
+
+  cadastrarAnuncio.addEventListener('click', function (event) {
+    event.preventDefault();
+    form.submit(); // formulário enviado com sucesso
+    }
+  );
+
 });

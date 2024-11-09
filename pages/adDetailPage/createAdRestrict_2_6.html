@@ -13,7 +13,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastrar Anúncio</title>
     <link rel="stylesheet" href="/styles/adRestrict_2_6.css">
 </head>
 
@@ -24,7 +24,7 @@ session_start();
 
     <main>
         <div class="formsContainer">
-            <form action="createAdRestrict.php" method="post" enctype="multipart/form-data">
+            <form action="../../controller/AnuncioController.php?acao=cadastrarAnuncio" method="post" enctype="multipart/form-data">
                 <div>
                     <label for="marca">Marca: </label>
                     <input type="text" name="marca" id="marca" required>
@@ -50,6 +50,10 @@ session_start();
                     <input type="text" name="descricao" id="descricao" required>
                 </div>
                 <div>
+                    <label for="valor">Valor: </label>
+                    <input type="number" name="valor" id="valor" required>
+                </div>
+                <div>
                     <label for="estado">Estado: </label>
                     <select name="estado" id="estado" required>
                         <option value="">Selecione</option>
@@ -68,13 +72,18 @@ session_start();
                     <input type="file" name="fotos" id="fotos" required accept=".png, .jpg, .jpeg" multiple>
                 </div>
             </form>
-            <button>Cadastrar</button>
+            <button id="cadastrarAnuncio" type="submit" class="btn-entrar">
+                Cadastrar
+                <span class="material-symbols-outlined"></span>
+            </button>
         </div>
     </main>
 
     <footer>
         <h3>Desenvolvido por Pâmela, Pedro e Victor</h3>
     </footer>
+
+    <script src="/pages/signUpPage/formValidator.js"></script>
 </body>
 
 </html>

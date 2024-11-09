@@ -90,4 +90,15 @@ class Anuncio
     {
         return $this->idAnunciante;
     }
+    static function Create($pdo, $marca, $modelo, $ano, $cor, $quilometragem, $descricao, $valor, $estado, $cidade, $idanunciante)
+    {
+        $stmt = $pdo->prepare(<<<SQL
+        INSERT INTO Anuncio (Marca, Modelo, Ano, Cor, Quilometragem, Descricao, Valor, DataHora, Estado, Cidade, IdAnunciante)
+        VALUES (?, ?, ?, ?, ?, ?, ?, NOW() , ?, ?, ?)
+        SQL
+        );
+        $stmt->execute([$marca, $modelo, $ano, $cor, $quilometragem, $descricao, $valor, $estado, $cidade, 2]);
+        return $pdo->lastInsertId();
+    }
+
 }
