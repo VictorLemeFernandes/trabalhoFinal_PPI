@@ -27,4 +27,14 @@ class Foto
     {
         return $this->nomeArqFoto;
     }
+
+    static function Create($pdo, $idAnuncio, $NomeArqFoto)
+    {
+        $stmt = $pdo->prepare(<<<SQL
+            INSERT INTO Foto (IdAnuncio, NomeArqFoto)
+            VALUES (?, ?)
+        SQL);
+        $stmt->execute([$idAnuncio, $NomeArqFoto]);
+        return $pdo->lastInsertId();
+    }
 }

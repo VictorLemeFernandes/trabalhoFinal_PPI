@@ -19,7 +19,6 @@ function validaFoto($arquivoImagem)
   return $imageType;
 }
 
-
 $arquivoImagemTemp = $_FILES["arquivo"]["tmp_name"] ?? "";
 
 try {
