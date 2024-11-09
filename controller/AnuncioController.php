@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../model/Anuncio.php";
 require_once "../database/conexaoMysql.php";
 
@@ -18,11 +19,11 @@ switch ($acao) {
         $valor = $_POST["valor"] ?? "";
         $estado = $_POST["estado"] ?? "";
         $cidade = $_POST["cidade"] ?? "";
-        // $idanunciante = $_POST["idanunciante"] ?? "";
+        $idanunciante = $_SESSION['user_id'] ?? null;
 
 
         try {
-            Anuncio::Create($pdo, $marca, $modelo, $ano, $cor, $quilometragem, $descricao, $valor, $estado, $cidade);
+            Anuncio::Create($pdo, $marca, $modelo, $ano, $cor, $quilometragem, $descricao, $valor, $estado, $cidade, $idanunciante);
             header("Location: ../pages/adlisting/adlisting.html");
         } catch (Exception $e) {
             throw new Exception($e->getMessage());

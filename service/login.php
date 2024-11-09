@@ -30,8 +30,6 @@ function checkUserCredentials($pdo, $email, $senha)
 
     if (!password_verify($senha, $senhaHash))
       return false; // email e/ou senha incorreta
-
-    // email e senha corretos
     return true;
   } catch (Exception $e) {
     exit('Falha inesperada: ' . $e->getMessage());
@@ -54,6 +52,13 @@ if (checkUserCredentials($pdo, $email, $senha)) {
   session_start();
   $_SESSION['loggedIn'] = true;
   $_SESSION['user'] = $email;
+
+  // Resgata o ID do anunciante do banco de dados
+  $stmt = $pdo->prepare("SELECT id FROM Anunciante WHERE email = ?");
+  $stmt->execute([$email]);
+  $anunciante = $stmt->fetch();
+  $_SESSION['user_id'] = $anunciante['id'];
+
   $response = new LoginResult(true, '/../pages/mainPage/mainPage_2_5.html');
 } else
   $response = new LoginResult(false, '');
