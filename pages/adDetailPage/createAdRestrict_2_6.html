@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/adRestrict_2_6.css">
+    <title>Cadastrar Anúncio</title>
+    <link rel="stylesheet" href="/styles/adRestrict_2_6.css">
 </head>
+
 <body>
     <header>
-        <img src="assets/logo/webcar_branco.png" alt="Logo branca" width="60" height="60">
+        <img src="/assets/logo/webcar_branco.png" alt="Logo branca" width="60" height="60">
     </header>
 
     <main>
         <div class="formsContainer">
-            <form action="createAdRestrict.php" method="post" enctype="multipart/form-data">
+            <form action="../../controller/AnuncioController.php?acao=cadastrarAnuncio" method="post" enctype="multipart/form-data">
                 <div>
                     <label for="marca">Marca: </label>
                     <input type="text" name="marca" id="marca" required>
@@ -35,9 +37,12 @@
                     <input type="number" name="quilometragem" id="quilometragem" required>
                 </div>
                 <div>
-                    <!-- PROCURAR AQUELE NEGÓCIO DE COLOCAR MULTILINE -->
                     <label for="descricao">Descrição: </label>
                     <input type="text" name="descricao" id="descricao" required>
+                </div>
+                <div>
+                    <label for="valor">Valor: </label>
+                    <input type="number" name="valor" id="valor" required>
                 </div>
                 <div>
                     <label for="estado">Estado: </label>
@@ -58,12 +63,18 @@
                     <input type="file" name="fotos" id="fotos" required accept=".png, .jpg, .jpeg" multiple>
                 </div>
             </form>
-            <button>Cadastrar</button>
+            <button id="cadastrarAnuncio" type="submit" class="btn-entrar">
+                Cadastrar
+                <span class="material-symbols-outlined"></span>
+            </button>
         </div>
     </main>
 
     <footer>
         <h3>Desenvolvido por Pâmela, Pedro e Victor</h3>
     </footer>
+
+    <script src="/pages/adDetailPage/adValidator.js"></script>
 </body>
+
 </html>

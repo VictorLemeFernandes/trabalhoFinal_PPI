@@ -1,4 +1,4 @@
-@import url(../imports.css);
+@import url('../styles/variables.css');
 
 .cards {
     width: 80%;

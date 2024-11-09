@@ -1,4 +1,4 @@
-@import url(../imports.css);
+@import url('../styles/variables.css');
 
 body {
     display: flex;
@@ -92,3 +92,10 @@ footer {
     width: 100%;
     box-sizing: border-box;
 }
+
+header a#voltar {
+    position: fixed;
+    top: 1%;
+    left: 1%; 
+    transform: scale(0.5);
+  }
