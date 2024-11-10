@@ -49,7 +49,7 @@ switch ($acao) {
                 echo "Imagem carregada com sucesso. Verifique a pasta fotos.";
 
 
-            header("Location: ../pages/adlisting/adlisting.html");
+            header("Location: ../pages/mainPage/mainPage_2_5.html");
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }

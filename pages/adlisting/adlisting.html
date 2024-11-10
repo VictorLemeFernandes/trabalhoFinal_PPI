@@ -17,6 +17,21 @@
 
     <div class="container">
         <h1>Meus Anúncios</h1>
+        <?php
+            require "conexaoMysql.php";
+            $pdo = mysqlConnect();
+            $stmt = $pdo->query("SELECT nome, telefone FROM aluno");
+            while ($row = $stmt->fetch()) {
+                $nome = htmlspecialchars($row['nome']);
+                $telefone = htmlspecialchars($row['telefone']);
+                echo <<<HTML
+                <tr>
+                    <td>$nome</td>
+                    <td>$telefone</td>
+                </tr>
+                HTML;
+            }
+        ?>
 
         <!-- Exemplos de anuncio -->
         <div class="anuncio">
