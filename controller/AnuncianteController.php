@@ -1,6 +1,6 @@
 <?php
-require "Anunciante.php";
-require "conexaoMysql.php";
+require_once "../model/Anunciante.php";
+require_once "../database/conexaoMysql.php";
 
 $acao = $_GET['acao'];
 
@@ -25,25 +25,6 @@ switch ($acao) {
         }
         break;
 
-    // case "excluirCliente":
-    //     $idCliente = $_GET["idCliente"] ?? "";
-    //     try {
-    //         Cliente::Remove($pdo, $idCliente);
-    //         header("location: clientes.html");
-    //     } catch (Exception $e) {
-    //         throw new Exception($e->getMessage());
-    //     }
-    //     break;
-
-    // case "listarClientes":
-    //     try {
-    //         $arrayClientes = Cliente::GetFirst30($pdo);
-    //         header('Content-Type: application/json; charset=utf-8');
-    //         echo json_encode($arrayClientes);
-    //     } catch (Exception $e) {
-    //         throw new Exception($e->getMessage());
-    //     }
-    //     break;
 
     default:
         exit("Ação não disponível");

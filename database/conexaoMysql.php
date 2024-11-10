@@ -3,7 +3,7 @@ function mysqlConnect()
 {
   $db_host = "sql209.infinityfree.com";
   $db_username = "if0_37061501";
-  $db_password = "TJeJTVooAASb";
+  $db_password = "g6TfrF53XbSu";
   $db_name = "if0_37061501_projeto_final";
 
   $options = [

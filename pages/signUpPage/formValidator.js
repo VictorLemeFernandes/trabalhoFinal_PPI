@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const cadastrar = document.getElementById('cadastrar');
   const form = document.querySelector('form');
 
-  // Precisamos corrigir a forma como tratar os dados... Ele tá alterando o CPF p/ ficar igual a máscara, mas acho que o certo seria só verificar mesmo, não alterar.. Ex.: eu digito o CPF 123.456.789-10 no banco eu acho que seria melhor armazenar 12345678910, mas sei lá... Vamos observar
+
   cpfInput.addEventListener('input', function () {
       let value = cpfInput.value;
       value = value.replace(/\D/g, '');
